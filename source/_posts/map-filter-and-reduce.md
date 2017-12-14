@@ -108,7 +108,7 @@ We are going to tackle an item equipping problem.
 
 Sir. Whinealot needs to be armed before going out for an adventure, but not all of the items are available for him, unfortunately.  
 
-![Sir. Whinealot](/images/sir-whinealot.png)
+![Sir. Whinealot](/images/pixelart/sir-whinealot--unequipped.gif "test")
 
 To determine what can be equipped by our brave knight, we will need tp compare his level with the level of every item in the rucksack.
 
@@ -198,7 +198,7 @@ At last, when it iterates through every item in the list, the `reduce` function 
 This time our mighty Sir. Whinealot is about to sell his hard-earned loot to the local innkeeper.  
 We have to know the worth of knight's equipment and we will achieve that by calculating the sum of value of every item in the rucksack. 
 
-![Sir. Whinealot](/images/sir-whinealot.png)
+![Sir. Whinealot](/images/pixelart/sir-whinealot--buisness-at-inn.gif "test")
 
 ### With the reduce
 ```javascript
@@ -263,7 +263,7 @@ It's time to put our metal to test!
 Sir. Whinealot is not a type of knight who's fooling around. He just embarked on a demon-slaying adventure.   
 From a list of creatures pestering a near village, we need to find a demon and slay him, yielding us some sweet experience points.  
 
-![Sir. Whinealot](/images/sir-whinealot.png)
+![Sir. Whinealot](/images/pixelart/sir-whinealot--orc-encounter.gif "test")
 
 We need to extract from a list a demon type creature and then execute him by calling `slay` on him.  
 When the purge is over, we will need to sum up our hard-earned experience points.

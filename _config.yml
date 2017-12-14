@@ -72,19 +72,40 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: brewski
+theme: anodyne
+# THEME
 theme_config:
-  logo:
-  google_analytics: UA-XXXXXXXX-X
-  copyright:
-    since: 2018
-    name: John Doe
-    url: https://bytebits.io
+  ## Header
   menu:
     Home: /
-    About: /about
-    GitHub: https://github.com/thebytebits
-    RSS: /atom.xml
+    Archives: /archives
+    About: /about.html
+  ## Logo
+  logo_image_source: /assets/anodyne.svg
+  ## Footer about
+  footer_about: "@Untitled. All right reserved"
+  ##
+  default_post_title: Untitled
+  default_post_icon: fa-file-text-o
+  ## Index Page
+  index_banner_text: Welcome to Anodyne
+  index_banner_text_secondary: Create Websites. Make Magic.
+  index_font_awesome_icon_css: fa fa-magic
+  ## Archive Date Format
+  archive_date_format: MMM YYYY
+  ## Comments.
+  comments:
+    disqus_shortname: thebytebits
+  ## Google Analytics Tracking ID
+  google_analytics: UA-109513724
+  ## Social Accounts
+  social_platforms:
+    - url: https://twitter.com/thebytebits
+      fa_icon: fa-twitter
+    - url: https://www.facebook.com/thebytebits
+      fa_icon: fa-facebook
+    - url: https://github.com/thebytebits
+      fa_icon: fa-github
 
 
 # Deployment
