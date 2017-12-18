@@ -1,5 +1,8 @@
 ---
 title:  "Map, filter and reduce"
+tags: ["JavaScript", "Vanilla", "Functional programming", "Map", "Filter", "Reduce"]
+categories: ["JavaScript", "Functional programming"]
+icon: fa-code
 ---
 
 # What's all the fuss about?
@@ -250,7 +253,8 @@ console.log( `The innkeeper can give you ${ offer } gold coins for your equipmen
 // The innkeeper can give you 31 gold coins for your equipment.
 ```
 
-----------  
+
+
 
 
 # Map, filter and reduce combined

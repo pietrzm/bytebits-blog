@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: ByteBits
 subtitle:
 description:
-author: John Doe
+author: Mateusz Pietrzak
 language:
 timezone:
 
@@ -81,16 +81,16 @@ theme_config:
     Archives: /archives
     About: /about.html
   ## Logo
-  logo_image_source: /assets/anodyne.svg
+  logo_image_source: /assets/logo.svg
   ## Footer about
   footer_about: "@Untitled. All right reserved"
   ##
   default_post_title: Untitled
   default_post_icon: fa-file-text-o
   ## Index Page
-  index_banner_text: Welcome to Anodyne
+  index_banner_text: ByteBits
   index_banner_text_secondary: Create Websites. Make Magic.
-  index_font_awesome_icon_css: fa fa-magic
+  index_font_awesome_icon_css: fa fa-bold
   ## Archive Date Format
   archive_date_format: MMM YYYY
   ## Comments.

@@ -10,7 +10,7 @@
     <div class="content">
         <div class="mw8 center">
             <div class="cf">
-                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                <div class="fl w-100 w-100-l mw8 left lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     <% if (page.tags && page.tags.length) {
                         var tags = [];
@@ -35,29 +35,30 @@
                         </div>
                     <% } %>
 
+
                     <!-- Comments -->
                     <%- partial('_partial/comments.ejs') %>
 
                 </div>
-                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
-                    
-                    <hr class="dn-l mw4 black-50 mt5" />
-                    
-                    <!-- Widget 1: About -->
-                    <%- partial('_partial/widget-about') %>
+                <!--<div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">-->
 
-                    <hr class="dn-l mw4 black-50 mt5" />
-                    
-                    <!-- Widget 2: Categories -->
-                    <% if (page.categories && page.categories.length) { %>
-                        <%- partial('_partial/widget-categories', {item: page}) %>
+                    <!--<hr class="dn-l mw4 black-50 mt5" />-->
 
-                        <hr class="dn-l mw4 black-50 mt5" />
-                    <% } %>
+                    <!--&lt;!&ndash; Widget 1: About &ndash;&gt;-->
+                    <!--<%- partial('_partial/widget-about') %>-->
 
-                    <!-- Widget 3: Recent Posts -->
-                    <%- partial('_partial/widget-recent-posts') %>
-                </div>
+                    <!--<hr class="dn-l mw4 black-50 mt5" />-->
+
+                    <!--&lt;!&ndash; Widget 2: Categories &ndash;&gt;-->
+                    <!--<% if (page.categories && page.categories.length) { %>-->
+                        <!--<%- partial('_partial/widget-categories', {item: page}) %>-->
+
+                        <!--<hr class="dn-l mw4 black-50 mt5" />-->
+                    <!--<% } %>-->
+
+                    <!--&lt;!&ndash; Widget 3: Recent Posts &ndash;&gt;-->
+                    <!--<%- partial('_partial/widget-recent-posts') %>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
