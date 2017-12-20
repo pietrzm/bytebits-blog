@@ -1,0 +1,23 @@
+@import "../abstracts/variables"
+
+
+.article-list
+  ul
+    li
+      padding: 15px
+      border-left: 1px solid transparent
+
+      a
+        display: flex
+        justify-content: space-between
+        text-decoration: none
+        color: $color-text
+
+        i
+          display: inline-block
+          font-size: 75px
+          color: $color-primary
+
+    li:hover
+      border-left: 1px solid $color-primary
+      opacity: 0.75

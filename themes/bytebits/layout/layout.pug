@@ -1,0 +1,35 @@
+doctype
+html( lang = "en" )
+    head
+        meta( charset = "UTF-8" )
+        meta( name = "viewport", content = "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" )
+        meta( http-equiv = "X-UA-Compatible", content = "IE=edge" )
+
+        link( rel="stylesheet", href = url_for( "https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" ) )
+        link( rel="stylesheet", href = url_for( "https://cdn.rawgit.com/FortAwesome/Font-Awesome/master/css/font-awesome.min.css" ) )
+        link( rel="stylesheet", href = url_for( "styles/main.css" ) )
+
+        title
+            = config.title
+
+
+    body
+        nav.navigation
+            ul
+                each route, name in theme.menu
+                    li
+                        a( href = url_for( route ) )
+                            = name
+
+        main.content
+            != body
+
+        footer.footer
+            section.social-media
+                ul
+                    each platform in theme.social_platforms
+                        li
+                            a( href = platform.url )
+                                i( class="fa " + platform.fa_icon )
+            small.copyright
+                = "@Untitled. All right reserved | Design & Hexo "

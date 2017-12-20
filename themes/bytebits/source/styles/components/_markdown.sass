@@ -1,0 +1,52 @@
+@import "../abstracts/variables"
+
+
+
+.markdown
+
+  h1, h2, h3, h4, h5
+    //font-family: 'Comfortaa', cursive
+    padding-top: 25px
+
+  hr
+    background: $color-text linear-gradient(to right, $color-background, $color-background-alternative, $color-background)
+
+    height: 1px
+    border: 0
+
+
+  code
+    font-family: 'Source Code Pro', monospace
+    font-size: 0.8rem
+    font-weight: 400
+    line-height: 1.5
+    white-space: nowrap
+
+    background-color: $color-background-alternative
+    color: $color-text
+
+    padding: 3px
+
+  pre > code
+    overflow: auto
+    white-space: pre
+
+    color: $color-text
+
+  img
+    display: block
+    margin: 30px auto
+    max-width: 100%
+    max-height: 350px
+    border-radius: 1%
+
+    box-shadow: 0 1px 3px $color-background-alternative
+    transform: rotate(-1deg)
+
+
+
+.markdown-excerpt
+  *
+    font-size: 14px
+    line-height: 1.25
+    color: $color-text
