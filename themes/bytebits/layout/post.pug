@@ -1,6 +1,7 @@
 nav.navbar
     div.navbar-brand
-        = "ByteBits"
+        a( src = "/" )
+            = "ByteBits"
 
     ul.navbar-items
         each route, name in theme.menu
@@ -10,6 +11,8 @@ nav.navbar
 
 main
     header.article-header
+        figure.icon
+            i.devicon-javascript-plain
         div.title
             = "Map, filter and reduce"
 

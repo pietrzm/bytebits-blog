@@ -32,25 +32,95 @@ $font-size-small: 0.75rem
 $font-size-regular: 1rem
 $font-size-large: 1.5rem
 $font-size-x-large: 3rem
+$font-size-xx-large: 4.5rem
+$font-size-xxx-large: 6rem
 
 
 
 
-@mixin font-display()
+=font-display()
   font-family: $font-family-display
-  line-height: 1.618em
+  line-height: 1em
   letter-spacing: 0.1em
   font-variant: small-caps
 
-@mixin font-text()
+=font-text()
   font-family: $font-family-text
   line-height: 1.618em
   letter-spacing: 0.05em
 
-@mixin font-code()
+=font-code()
   font-family: $font-family-code
   line-height: 1.618em
   letter-spacing: 0.1em
 
 
 
+=breakpoint($point)
+  @if $point == widescreen
+    @media (min-width: 1216px)
+      @content
+  @else if $point == desktop
+    @media (min-width: 1024px)
+      @content
+  @else if $point == tablet
+    @media (min-width: 769px)
+      @content
+  @else if $point == mobile
+    @media (max-width: 768px)
+       @content
+
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 32px !default
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap) !default
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default
+
+
+=from($device)
+  @media screen and (min-width: $device)
+    @content
+
+//=until($device)
+//  @media screen and (max-width: $device - 1px)
+//    @content
+//
+=mobile
+  @media screen and (max-width: $tablet - 1px)
+    @content
+
+=tablet
+  @media screen and (min-width: $tablet), print
+    @content
+//
+//=tablet-only
+//  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+//    @content
+//
+//=touch
+//  @media screen and (max-width: $desktop - 1px)
+//    @content
+//
+=desktop
+  @media screen and (min-width: $desktop)
+    @content
+
+//=desktop-only
+//  @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px)
+//    @content
+//
+=widescreen
+  @media screen and (min-width: $widescreen)
+    @content
+//
+//=widescreen-only
+//  @media screen and (min-width: $widescreen) and (max-width: $fullhd - 1px)
+//    @content
+//
+//=fullhd
+//  @media screen and (min-width: $fullhd)
+//@content

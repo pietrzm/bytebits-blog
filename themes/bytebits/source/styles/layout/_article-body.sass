@@ -22,7 +22,10 @@
     font-size: 1.5rem
 
 
-  pre code
-    @include font-code
-    color: $color-code
-    font-size: $font-size-small
+  pre
+    background: $color-background-alternative !important
+
+    code
+      @include font-code
+      color: $color-code
+      font-size: $font-size-small
