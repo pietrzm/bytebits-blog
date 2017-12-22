@@ -1,10 +1,12 @@
 @import "base/reset"
+@import "base/core"
 @import "abstracts/variables"
 @import "layout/article-list"
-@import "layout/navigation"
+@import "layout/navbar"
 @import "layout/content"
 @import "layout/footer"
-@import "layout/article"
+@import "layout/article-header"
+@import "layout/article-body"
 @import "layout/article-short"
 @import "components/tags"
 @import "components/markdown"
@@ -14,4 +16,6 @@
 
 
 html
+  @include font-text
   font-size: 16px
+

@@ -1,2 +1,17 @@
-section.article
-    != page.content
+nav.navbar
+    div.navbar-brand
+        = "ByteBits"
+
+    ul.navbar-items
+        each route, name in theme.menu
+            li.navbar-item
+                a( href = url_for( route ) )
+                    = name
+
+main
+    header.article-header
+        div.title
+            = "Map, filter and reduce"
+
+    section.content.article-body
+        != page.content

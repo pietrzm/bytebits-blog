@@ -1,0 +1,39 @@
+@import "../abstracts/variables"
+
+
+
+.navbar
+  @include font-display
+
+  display: flex
+  justify-content: space-between
+
+  color: $color-text
+  padding: 0 3%
+  font-size: $font-size-large
+
+  &.is-opaque
+    color: $color-text-alternative
+    background-color: $color-primary
+    a
+      color: $color-text-alternative
+
+
+  .navbar-brand
+    font-size: $font-size-large
+
+
+  ul.navbar-items
+    li.navbar-item
+      display: inline-block
+      text-align: center
+
+
+  a
+    text-decoration: none
+    color: $color-text
+    padding: 15px
+    &:hover
+      opacity: 0.5
+
+

@@ -2,7 +2,7 @@
 title:  "Map, filter and reduce"
 tags: ["JavaScript", "Vanilla", "Functional programming", "Map", "Filter", "Reduce"]
 categories: ["JavaScript", "Functional programming"]
-icon: fa-code
+icon: devicon-javascript-plain
 ---
 
 # What's all the fuss about?

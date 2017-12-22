@@ -14,15 +14,9 @@ html( lang = "en" )
 
 
     body
-        nav.navigation
-            ul
-                each route, name in theme.menu
-                    li
-                        a( href = url_for( route ) )
-                            = name
 
-        main.content
-            != body
+
+        != body
 
         footer.footer
             section.social-media
@@ -32,4 +26,4 @@ html( lang = "en" )
                             a( href = platform.url )
                                 i( class="fa " + platform.fa_icon )
             small.copyright
-                = "@Untitled. All right reserved | Design & Hexo "
+                = "@ByteBits. All right reserved."
