@@ -16,6 +16,11 @@
 
 
 html
-  @include font-text
-  font-size: 16px
-
+  @include mobile
+    @include font-text(12px)
+  @include tablet
+    @include font-text(14px)
+  @include desktop
+    @include font-text(16px)
+  @include widescreen
+    @include font-text(18px)

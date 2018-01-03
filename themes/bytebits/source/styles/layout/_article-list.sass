@@ -4,7 +4,8 @@
 .article-list
   ul
     li
-      padding: 25px
+      margin: 7% 0
+      padding: 3%
       border-left: 1px solid transparent
 
       a
@@ -14,9 +15,17 @@
         color: $color-text
 
         i
-          display: inline-block
-          font-size: 75px
-          color: $color-primary
+          @include mobile
+            display: none
+          @include tablet
+            display: inline-block
+          @include desktop
+            display: inline-block
+          @include widescreen
+            display: inline-block
+          margin: auto 5%
+          font-size: $font-size-xxx-large
+          color: $color-text
 
     li:hover
       border-left: 1px solid $color-primary

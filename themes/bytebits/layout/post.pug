@@ -1,13 +1,7 @@
-nav.navbar
-    div.navbar-brand
-        a( src = "/" )
-            = "ByteBits"
+include _mixins.pug
 
-    ul.navbar-items
-        each route, name in theme.menu
-            li.navbar-item
-                a( href = url_for( route ) )
-                    = name
+
++navbar()
 
 main
     header.article-header

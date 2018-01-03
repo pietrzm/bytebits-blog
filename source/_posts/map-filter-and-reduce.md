@@ -3,6 +3,9 @@ title:  "Map, filter and reduce"
 tags: ["JavaScript", "Vanilla", "Functional programming", "Map", "Filter", "Reduce"]
 categories: ["JavaScript", "Functional programming"]
 icon: devicon-javascript-plain
+summary: |
+    Have you ever wished your code was more concise, functions pure and your application being more elegant without need of any class?
+    Wish no more!
 ---
 
 # What's all the fuss about?

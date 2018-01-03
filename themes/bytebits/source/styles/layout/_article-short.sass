@@ -3,11 +3,14 @@
 
 
 .article-short
-  @include font-display
   display: inline-block
 
   .date
     display: inline-block
 
   .title
-    font-size: $font-size-large
+    @include font-display($font-size-large)
+    margin: 15px 0
+
+  .summary
+    @include font-text($font-size-regular)

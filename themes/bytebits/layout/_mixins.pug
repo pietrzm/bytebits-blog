@@ -1,0 +1,11 @@
+mixin navbar()
+    nav.navbar
+        div.navbar-brand
+            a( src = "/" )
+                = "ByteBits"
+
+        ul.navbar-items
+            each route, name in theme.menu
+                li.navbar-item
+                    a( href = url_for( route ) )
+                        = name

@@ -31,28 +31,31 @@ $font-family-code: $font-family-monospace
 $font-size-small: 0.75rem
 $font-size-regular: 1rem
 $font-size-large: 1.5rem
-$font-size-x-large: 3rem
-$font-size-xx-large: 4.5rem
+$font-size-x-large: 2rem
+$font-size-xx-large: 2.5rem
 $font-size-xxx-large: 6rem
 
 
 
 
-=font-display()
+=font-display($font-size)
   font-family: $font-family-display
+  font-size: $font-size
   line-height: 1em
   letter-spacing: 0.1em
   font-variant: small-caps
 
-=font-text()
+=font-text($font-size)
   font-family: $font-family-text
+  font-size: $font-size
   line-height: 1.618em
   letter-spacing: 0.05em
 
-=font-code()
+=font-code($font-size)
   font-family: $font-family-code
+  font-size: $font-size
   line-height: 1.618em
-  letter-spacing: 0.1em
+  letter-spacing: 0.05em
 
 
 

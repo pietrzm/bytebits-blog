@@ -2,30 +2,29 @@
 
 
 .article-body
-  @include font-text
+  @include font-text($font-size-regular)
 
 
   p
     margin: 15px 0
 
   h1, h2, h3
-    @include font-display
+    @include font-display($font-size-regular)
     padding-top: 25px
 
   h1
-    font-size: 2.5rem
+    font-size: $font-size-x-large
 
   h2
-    font-size: 2rem
+    font-size: $font-size-large
 
   h3
-    font-size: 1.5rem
+    font-size: $font-size-regular
 
 
   pre
     background: $color-background-alternative !important
 
     code
-      @include font-code
+      @include font-code($font-size-small)
       color: $color-code
-      font-size: $font-size-small

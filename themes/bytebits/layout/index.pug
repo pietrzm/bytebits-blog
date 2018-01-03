@@ -1,0 +1,24 @@
+include _mixins.pug
+
+
++navbar()
+
+main
+    section.content.article-list
+        ul
+            each post in site.posts.data
+                li
+                    a( href = url_for( post.path ) )
+                        article.article-short
+                            datetime.date
+                                = full_date(post.date, config.date_format)
+                            .tags
+                                each tag in post.tags.data
+                                    .tag
+                                        = tag.name
+                            header.title
+                                = post.title
+                            p.summary
+                                = post.summary
+
+                        i(class=post.icon || "devicon-devicon-plain")
