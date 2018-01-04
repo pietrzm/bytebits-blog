@@ -23,7 +23,7 @@ html( lang = "en" )
                 ul
                     each platform in theme.social_platforms
                         li
-                            a( href = platform.url )
+                            a( href = platform.url, target = "_blank" )
                                 i( class="fa " + platform.fa_icon )
             small.copyright
                 = "@ByteBits. All right reserved."

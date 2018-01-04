@@ -6,25 +6,31 @@
 
 
   p
-    margin: 15px 0
+    margin: 1% 0
 
   h1, h2, h3
-    @include font-display($font-size-regular)
     padding-top: 25px
 
   h1
-    font-size: $font-size-x-large
+    @include font-display($font-size-x-large)
 
   h2
-    font-size: $font-size-large
+    @include font-display($font-size-large)
 
   h3
-    font-size: $font-size-regular
+    @include font-display($font-size-regular)
 
+
+  code
+    @include font-code($font-size-small)
+    background: $color-background-alternative
+    color: $color-primary
+    padding: 0.25em 0.5em
 
   pre
     background: $color-background-alternative !important
-
+    line-height: 1em !important
     code
-      @include font-code($font-size-small)
       color: $color-code
+      padding: 0
+      margin: 0

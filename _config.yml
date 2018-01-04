@@ -104,6 +104,8 @@ theme_config:
       fa_icon: fa-twitter
     - url: https://www.facebook.com/thebytebits
       fa_icon: fa-facebook
+    - url: https://medium.com/@thebytebits
+      fa_icon: fa-medium
     - url: https://github.com/thebytebits
       fa_icon: fa-github
 

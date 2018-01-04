@@ -3,6 +3,9 @@ layout: article
 title:  "Tagged template literals"
 date:   2017-11-08 11:21:14 +0100
 author: John Jones
+summary: |
+    Have you ever wished your code was more concise, functions pure and your application being more elegant without need of any class?
+    Wish no more!
 ---
 
 
