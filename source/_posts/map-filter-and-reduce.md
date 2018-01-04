@@ -23,7 +23,7 @@ This function plays a really big part in a functional paradigm and is perhaps on
 That means, you'll get familiar with it rather pretty quickly.
 
 ```javascript
-const new_array = old_array.map( item => /* Return an element for a new_array */ )
+const new_array = old_array.map( item => null /* Return an element for a new_array */ )
 ```
 
 It applies given function to each item in an array and returns a new array of results.  
@@ -101,7 +101,7 @@ When working with collections oftentimes you will need to find one or more eleme
 That's when the `filter` function comes in handy.
 
 ```javascript
-const new_array = old_array.filter( item => /* Return true to keep the element, false otherwise */ )
+const new_array = old_array.filter( item => null/* Return true to keep the element, false otherwise */ )
 ```
 
 Basically, it filters out items from an array, that do not return truthy value from passed in function.
@@ -188,7 +188,7 @@ console.log( `${ player.name } can equip ${ wearables.join( ", " ).toLowerCase()
 And now it's time to present you the last of the three, the `reduce` function.
 
 ```javascript
-const new_array = old_array.reduce( ( accumulator, item ) => /* value of accumulator on next iteration */ )
+const new_array = old_array.reduce( ( accumulator, item ) => null /* value of accumulator on next iteration */ )
 ```
 
 It applies a rolling computation to sequential pairs of values in an array and returning the result.

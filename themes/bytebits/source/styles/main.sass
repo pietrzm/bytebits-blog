@@ -24,3 +24,12 @@ html
     @include font-text(16px)
   @include widescreen
     @include font-text(18px)
+
+img[src*="/pixelart"]
+  display: block
+  margin: 7% auto
+  height: 7vh
+  image-rendering: optimizeSpeed
+  image-rendering: -moz-crisp-edges
+  image-rendering: -o-crisp-edges
+  image-rendering: pixelated

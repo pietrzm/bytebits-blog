@@ -36,3 +36,9 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
+
+
+
+![Sir. Whinealot](/images/pixelart/sir-whinealot--unequipped.gif "test")
+![Sir. Whinealot](/images/pixelart/sir-whinealot--buisness-at-inn.gif "test")
+![Sir. Whinealot](/images/pixelart/sir-whinealot--orc-encounter.gif "test")
