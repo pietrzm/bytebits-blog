@@ -1,11 +1,16 @@
 ---
-title:  "Map, filter and reduce"
-tags: ["JavaScript", "Vanilla", "Functional programming", "Map", "Filter", "Reduce"]
-categories: ["JavaScript", "Functional programming"]
-icon: devicon-javascript-plain
+layout: article
+
+title:  Map, filter and reduce, the functional way
+date: 2019-01-01
+categories:
+    - Vanilla JavaScript
+    - Functional programming
+tags: [ vanilla, javascript, functional programming, map, filter, reduce ]
 summary: |
-    Have you ever wished your code was more concise, functions pure and your application being more elegant without need of any class?
-    Wish no more!
+    Some summary
+    
+icon: devicon-javascript-plain
 ---
 
 # What's all the fuss about?

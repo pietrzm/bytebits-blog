@@ -49,7 +49,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 0
   order_by: -date
   
 # Category & Tag
@@ -61,7 +61,7 @@ tag_map:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: MMMM Do YYYY
 time_format: HH:mm:ss
 
 # Pagination
