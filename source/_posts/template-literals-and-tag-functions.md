@@ -13,6 +13,153 @@ summary: |
 icon: devicon-javascript-plain
 ---
 
+> (Some kind of introduction.) [Gone will be the days of long string concatenation!]
+
+> (Explain basics of template literals.)
+> (Show them the string interpolation.)
+
+```javascript
+// Some basic code sample here
+```
+
+> (Present them a basic, cool functionality they can implement with it.)
+
+```javascript
+// Some cool functionality
+```
+
+> (Explain them that's basically it, when it comes to template literals invoked without a tag.)
+> (Tell, to keep reading on, if they're curious about tags.)
+
+## Tagged template literals
+> (Some kind of introduction to function tags of template literals.)
+> (Show them how to use a template literal tag.)
+
+```javascript
+// Some sample of using tagged template strings
+```
+
+> (Show them how to implement such tag.)
+
+```javascript
+// Implementation of mentioned before tag
+```
+
+> (Explain each argument of a function.)
+
+```javascript
+// Compare both calls, as a tag and as a function and present them no difference on the output.
+```
+
+## Exercise
+> (Present users with some simple exercise which may seem useful to some.)
+> (Define the use case for the following examples.)
+
+### Text
+> (Start with reimplementing the default functionality of a template literal.)
+> (Prove them that there's no smoke and mirrors involved in how template literals work, that it's nothing more than some sugar on top.)
+> (Explain to readers, how this basic tag will be used as a base for every other tag that will be introduced shortly.)
+
+```javascript
+/**
+ * @param {Array<string>} strings
+ * @param {...*} values
+ * @returns {string}
+ */
+const text = (strings, ...values) => {
+  let result = ""
+
+  for (let i = 0; i < strings.length; i++) {
+    result += strings[i]
+    if (i <= values.length - 1) {
+      result += values[i]
+    }
+  }
+
+  return result
+}
+```
+
+### HTML
+> (Explain what will be exactly our next tag, and why should we even bother.)
+> (Introduce use case.)
+
+```javascript
+/**
+ * @param {Array<string>} strings
+ * @param {...*} values
+ * @returns {HTMLElement}
+ */
+const html = (strings, ...values) => {
+  const el = document.createElement("div")
+  el.innerHTML = text(strings, ...values)
+
+  return el
+}
+```
+
+### CSS
+> (Explain what will be exactly our next tag, and why should we even bother.)
+> (Introduce use case.)
+
+```javascript
+/**
+ * @param {Array<string>} strings
+ * @param {...*} values
+ * @returns {string}
+ */
+const css = (strings, ...values) => {
+  const el = document.createElement("style")
+  document.head.appendChild(el)
+
+  const className = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
+    style = text(strings, ...values)
+
+  el.textContent = `.${ className } { ${ style } }`
+
+  return className;
+}
+```
+
+### Together
+{% raw %}
+<script async src="//jsfiddle.net/thebytebits/k09edezs/embed/js,result/"></script>
+{% endraw %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# END
+
 Template literal - this new fellow is, hands down, one of the best features of `ES6`.
 
 It power up's our arsenal with string interpolation and a support for so awaited multi-line strings.
@@ -21,7 +168,6 @@ It's doing so by introducing new quote-like syntax, in which may look pretty odd
 ```javascript
 const player = {
     name: "Fuggles",
-    race: "Halfling",
     level: 2
 }
 
@@ -31,16 +177,15 @@ const location = {
 }
 
 
-const output = 
+console.log( 
     `After a long journey, ${ player.name } has managed to reach ${ location.name } city. 
-    Place seems to be ${ ( player.level > location.level ) ? "safe" : "dangerous" }, even for a ${ player.race }.`
-    
-console.log( output )
+    This place seems to be ${ ( player.level > location.level ) ? "safe" : "dangerous" }.`
+ )
 
 
 /// console output
 // After a long journey,Fuggles has managed to reach Punyfolk city.
-// Place seems to be dangerous, even for a Halfling.
+// This place seems to be dangerous.
 ```
 
 
