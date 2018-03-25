@@ -24,13 +24,14 @@ Together, we will level up your functional ninjutsu's skills, because its always
 In this article we are going to talk about three basic functional tools available natively in any ES5 supporting browser and Node.js as well.  
 
 
-# Array.prototype.map
+# Array#map
 This function plays a really big part in a functional paradigm and is perhaps one of the most useful and often used array method in day to day use.
 That means, you'll get familiar with it rather pretty quickly.
 
 ```javascript
-const new_array = 
-    old_array.map( item => null /* Return an element for a new_array */ )
+const new_array = old_array.map(item => {
+    return /* Return an element for a new_array */
+})
 ```
 
 It applies given function to each item in an array and returns a new array of results.  
@@ -53,10 +54,10 @@ const carcass = [
 ]
 
 
-const loot = carcass.map( n => n.name.toLowerCase() )
+const loot = carcass.map(n => n.name.toLowerCase())
 
-console.log( "dev: loot variable", loot );
-console.log( `Sir. Whinealot have looted ${ loot.join( ", " ) } from a dead rat.` )
+console.log("dev: loot variable", loot);
+console.log(`Sir. Whinealot have looted ${ loot.join(", ") } from a dead rat.`)
 
 
 
@@ -82,12 +83,12 @@ const carcass = [
 
 
 const loot = [];
-for ( const item of carcass ) {
-    loot.push( item.toLowerCase() )
+for (const item of carcass) {
+    loot.push(item.toLowerCase())
 }
 
-console.log( "dev: loot variable", loot )
-console.log( `Sir. Whinealot have looted ${ loot.join( ", " ) } from a dead rat.` )
+console.log("dev: loot variable", loot)
+console.log(`Sir. Whinealot have looted ${ loot.join(", ") } from a dead rat.`)
 
 
 
@@ -103,13 +104,14 @@ console.log( `Sir. Whinealot have looted ${ loot.join( ", " ) } from a dead rat.
 ```
   
 
-# Array.prototype.filter
+# Array#filter
 When working with collections oftentimes you will need to find one or more elements of your interest.
 That's when the `filter` function comes in handy.
 
 ```javascript
-const new_array = 
-    old_array.filter( item => null/* Return true to keep the element, false otherwise */ )
+const new_array = old_array.filter(item => {
+    return /* Return true to keep the element, false otherwise */
+})
 ```
 
 Basically, it filters out items from an array, that do not return truthy value from passed in function.
@@ -139,10 +141,10 @@ const rucksack = [
 ]
 
 
-const wearables = rucksack.filter( n => n.level <= player.level )
+const wearables = rucksack.filter(n => n.level <= player.level)
 
-console.log( "dev: wearables variable", wearables )
-console.log( `${ player.name } can equip ${ wearables.join( ", " ).toLowerCase() }` )
+console.log("dev: wearables variable", wearables)
+console.log(`${ player.name } can equip ${ wearables.join(", ").toLowerCase() }`)
 
 
 
@@ -169,14 +171,14 @@ const rucksack = [
 
 
 const wearables = []
-for ( const item of rucksack ) {
-    if ( item.level <= player.level ) {
-        wearables.push( item )
+for (const item of rucksack) {
+    if (item.level <= player.level) {
+        wearables.push(item)
     }
 }
 
-console.log( "dev: wearables variable", wearables )
-console.log( `${ player.name } can equip ${ wearables.join( ", " ).toLowerCase() }` )
+console.log("dev: wearables variable", wearables)
+console.log(`${ player.name } can equip ${ wearables.join( ", " ).toLowerCase() }`)
 
 
 
@@ -192,12 +194,13 @@ console.log( `${ player.name } can equip ${ wearables.join( ", " ).toLowerCase()
 
 
 
-# Array.prototype.reduce
+# Array#reduce
 And now it's time to present you the last of the three, the `reduce` function.
 
 ```javascript
-const new_array = 
-    old_array.reduce( ( accumulator, item ) => null /* value of accumulator on next iteration */ )
+const new_array = old_array.reduce((accumulator, item) => {
+    return /* value of accumulator on next iteration */
+})
 ```
 
 It applies a rolling computation to sequential pairs of values in an array and returning the result.
@@ -225,10 +228,10 @@ const rucksack = [
 ]
 
 
-const offer = rucksack.reduce( ( accumulator, value ) => accumulator + value, 0 )
+const offer = rucksack.reduce((accumulator, value) => accumulator + value, 0)
 
-console.log( "dev: offer variable", offer )
-console.log( `The innkeeper can give you ${ offer } gold coins for your equipment.` )
+console.log("dev: offer variable", offer)
+console.log(`The innkeeper can give you ${ offer } gold coins for your equipment.`)
 
 
 
@@ -250,12 +253,12 @@ const rucksack = [
 
 
 let offer = 0;
-for ( const item of rucksack ) {
+for (const item of rucksack) {
     offer = offer + item.value
 }
 
-console.log( "dev: offer variable", offer )
-console.log( `The innkeeper can give you ${ offer } gold coins for your equipment.` )
+console.log("dev: offer variable", offer)
+console.log(`The innkeeper can give you ${ offer } gold coins for your equipment.`)
 
 
 
@@ -303,12 +306,12 @@ const creatures = [
 
 const experience =
     creatures
-        .filter( isDemon )
-        .map( slay )
-        .reduce( add )
+        .filter(isDemon)
+        .map(slay)
+        .reduce(add)
 
-console.log( "dev: experience variable", experience )
-console.log( `You've just gained ${ experience } experience points!` )
+console.log("dev: experience variable", experience)
+console.log(`You've just gained ${ experience } experience points!`)
 
 
 // dev: experience variable
@@ -318,7 +321,9 @@ console.log( `You've just gained ${ experience } experience points!` )
 ```
 
 # Last few words
-I really hope you made to the end and enjoyed this read.
+I really hope you made it to the end and enjoyed this read.
 
-If you have any questions or thoughts you want to share, then please leave your comment below!  
-I'll be more than happy to answer all of your questions!
+And as always. 
+When in doubt, visit MDN documentation. ([map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).)
+
+If you have any questions or thoughts you want to share just leave your comments below!
