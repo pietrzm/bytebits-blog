@@ -1,0 +1,23 @@
+{{> navbar }}
+
+<main class="curtain">
+    <ul class="article-list">
+        {{# each site.posts.data as |post| }}
+        <li class="article-short">
+            <div>
+                <span class="publication-date">{{ date post.date }}</span>
+                {{> tags post.tags }}
+            </div>
+            <span class="article-title">
+                <i class="icon javascript"></i>
+                <a href="{{ post.path }}">{{ post.title }}</a>
+            </span>
+            <span class="article-summary">
+                {{markdown post.summary }}
+            </span>
+        </li>
+        {{/ each }}
+    </ul>
+</main>
+
+{{> footer }}

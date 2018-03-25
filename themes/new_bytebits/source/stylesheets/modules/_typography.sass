@@ -1,0 +1,30 @@
+@import "../utilities/math"
+
+
+
+$typography--octave-ratio: 2
+$typography--golden-ratio: 1.618034
+$typography--perfect-fifth-ratio: 1.5
+$typography--perfect-fourth-ratio: 1.333333333
+$typography--major-third-ratio: 1.25
+$typography--minor-third-ratio: 1.2
+$typography--major-second: 1.125
+$typography--minor-second: 1.06666666
+
+$typography--font-size: 1.15rem
+$typography--ratio: $typography--major-third-ratio
+$typography--leading: $typography--golden-ratio
+
+
+@function typographic-scale($note)
+  @return pow($typography--ratio, $note) * $typography--font-size
+
+@function leading($font-size)
+  $leading: $typography--font-size * $typography--leading
+  @return ceil($font-size / $leading) * $leading
+
+
+@mixin typography($font-family, $font-size)
+  font-family: $font-family
+  font-size: $font-size
+  line-height: leading($font-size)

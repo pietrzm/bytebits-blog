@@ -1,0 +1,25 @@
+@mixin social-media-icon($code)
+  font-family: "Socialfont", fantasy
+  &:before
+    content: $code
+
+
+@mixin social-media
+
+  &.twitter
+    @include social-media-icon("\e601")
+
+  &.github
+    @include social-media-icon("\e60c")
+
+  &.linkedin
+    @include social-media-icon("\e60a")
+
+  &.facebook
+    @include social-media-icon("\e600")
+
+  &.youtube
+    @include social-media-icon("\e605")
+
+  &.rss
+    @include social-media-icon("\e607")

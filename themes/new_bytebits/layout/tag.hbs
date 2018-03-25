@@ -1,0 +1,19 @@
+{{> navbar }}
+
+<main class="curtain">
+    <div class="container">
+        <h1>{{ page.tag }}</h1>
+        <ul class="article-list">
+
+
+        {{# each (spread (filter (hasTag page.tag)) site.posts.data) as |post| }}
+            <li class="article-short">
+                <div class="publication-date">{{ date post.date }}</div>
+                <a href="{{ post.path }}">{{ post.title }}</a>
+            </li>
+        {{/ each }}
+        </ul>
+</div>
+</main>
+
+{{> footer }}

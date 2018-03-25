@@ -1,0 +1,75 @@
+@import "../modules/color"
+@import "../modules/constants"
+@import "../modules/spacing"
+@import "../modules/typography"
+@import "../modules/font-family"
+@import "../modules/font-size"
+@import "../modules/media"
+
+
+
+.comments
+  display: block
+  padding: 5% 0
+
+  margin: auto
+  width: 95%
+  @include media($media--tablet)
+    width: 90%
+  @include media($media--desktop)
+    width: 70%
+  @include media($media--widescreen)
+    width: 50%
+
+
+  .details
+    display: flex
+    justify-content: space-between
+
+
+    .author
+      @include typography($font-family--display, $font-size--text)
+      font-weight: bold
+
+
+  .new
+    display: block
+    padding: 1%
+    padding-bottom: leading($font-size--text)
+
+
+    .publish
+      @include typography($font-family--text, $font-size--notice)
+      font-weight: bold
+
+      color: $color--notice
+
+      display: inline-block
+      width: auto
+
+      background-color: transparent
+
+      &:hover
+        color: $color--primary
+
+
+    .input,
+    .textarea
+      margin: 0
+      padding: 0
+
+      background-color: inherit
+
+
+    .input
+      display: inline-block
+      width: auto
+
+
+    .textarea
+      height: leading($font-size--text)
+
+
+  .comment
+    display: block
+    padding: 1%

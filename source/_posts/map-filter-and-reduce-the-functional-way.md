@@ -8,7 +8,8 @@ categories:
     - Functional programming
 tags: [ vanilla, javascript, functional programming, map, filter, reduce ]
 summary: |
-    Some summary
+    Together, we will level up your functional ninjutsu's skills, because its always worth having few more tricks up in your sleeve.   
+    In this article we are going to talk about three basic functional tools available natively in any ES5 supporting browser and Node.js as well.  
     
 icon: devicon-javascript-plain
 ---
@@ -82,7 +83,7 @@ const carcass = [
 
 const loot = [];
 for ( const item of carcass ) {
-    loot.push( item )
+    loot.push( item.toLowerCase() )
 }
 
 console.log( "dev: loot variable", loot )
@@ -123,7 +124,7 @@ Sir. Whinealot needs to be armed before going out for an adventure, but not all 
 
 ![Sir. Whinealot](/images/pixelart/sir-whinealot--unequipped.gif "test")
 
-To determine what can be equipped by our brave knight, we will need tp compare his level with the level of every item in the rucksack.
+To determine what can be equipped by our brave knight, we will need to compare his level with the level of every item in the rucksack.
 
 
 ### With the filter

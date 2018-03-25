@@ -1,0 +1,24 @@
+@import "../modules/typography"
+@import "../modules/font-family"
+@import "../modules/font-size"
+@import "../modules/color"
+@import "../modules/spacing"
+@import "../modules/constants"
+
+
+
+.tags
+  @include typography($font-family--text, $font-size--text)
+  display: inline-block
+  margin: 0 spacer($large, $spacing--fixed)
+
+  .tag
+    display: inline-block
+    margin: 0 spacer($small, $spacing--fixed)
+
+    font-variant: small-caps
+    color: $color--link
+    > *:before
+      content: '#'
+    &:hover
+      color: $color--link-hover

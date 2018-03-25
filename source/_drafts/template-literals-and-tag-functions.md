@@ -21,10 +21,10 @@ icon: devicon-javascript-plain
 ```javascript
 // Some basic code sample here
 const domain = "example-shop.com",
-    language = "en-GB",
-    items= ["Orange", "Apple"]
+    language = "en-US",
+    items = ["Orange", "Apple"]
 
-const url = `https://${ domain }/${ language }/checkout-cart?items=${ items }`
+const url = `https://${ domain }/${ language }/checkout?items=${ items }`
 //
 ```
 
@@ -67,9 +67,16 @@ template(toothbrush)
 > (Show them how to use a template literal tag.)
 
 ```javascript
-// Some sample of using tagged template strings
-String.raw`You really shold find a work Joe.`
-//
+const lectures = [
+    "WebAssembly, here and now!", 
+    "FnFunctional JavaScript"
+]
+
+lectures.map(lecture => blah`Some really interesting lecture on ${ lecture }. Really!`)
+// [
+//     "Blah, blah, blah...",
+//     "Blah, blah, blah..."
+// ]
 ```
 
 > (Show them how to implement such tag.)
@@ -77,25 +84,21 @@ String.raw`You really shold find a work Joe.`
 ```javascript
 // Implementation of mentioned before tag
 const blah = (strings, ...values) => {
-    console.log(strings[0]) //
-    console.log(strings[1]) //
-    console.log(values[0])  //    
-    console.log(values[1])  //
+    console.log(strings[0]) // "Some really interesting lecture on "
+    console.log(values[0])  // "FnFunctional JavaScript"
+    console.log(strings[1]) // ". Really!"
         
     return "Blah, blah, blah..."
 }
-
-
-blah``
-// 
 ```
+
 
 > (Explain each argument of a function.)
 
 ```javascript
 // Compare both calls, as a tag and as a function and present them no difference on the output.
-String.raw``    //
-String.raw([], null, null)    //
+blah``
+blah(["Some really interesting lecture on ", ". Really!"], "FnFunctional JavaScript")
 ```
 
 ## Exercise

@@ -1,0 +1,40 @@
+@import "../../modules/typography"
+@import "../../modules/font-family"
+@import "../../modules/font-size"
+@import "../../modules/color"
+@import "../../modules/media"
+@import "../../modules/constants"
+@import "../../modules/spacing"
+
+
+
+.article-list
+  display: block
+  list-style: none
+
+  margin: 0 5%
+  width: 85%
+  @include media($media--tablet)
+    width: 85%
+  @include media($media--desktop)
+    width: 75%
+  @include media($media--widescreen)
+    width: 65%
+
+
+  a
+    color: inherit
+    &:hover
+      color: inherit
+
+
+  .article-title
+    @include typography($font-family--display, $font-size--title)
+    color: inherit
+
+
+  .article-short
+    transition: color 100ms ease-in
+    margin: 7% 0
+    &:hover
+      color: $color--primary

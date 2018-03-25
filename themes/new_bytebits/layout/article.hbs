@@ -1,0 +1,59 @@
+{{> navbar }}
+
+<main class="curtain">
+    <div class="article">
+        <div class="article-details">
+            <div>
+                <figure class="category-logotype">
+                    <img src="/assets/images/logotypes/javascript.svg">
+                </figure>
+                <span class="publication-date">{{ date page.date }}</span>
+                {{> tags page.tags }}
+            </div>
+            <span class="article-title">{{ page.title }}</span>
+        </div>
+        <div class="article-content">
+            {{{ page.content }}}
+        </div>
+    </div>
+</main>
+<section class="hero">
+    <span class="title">Hero section</span>
+    <p>This is a section you can present your offer to a reader.</p>
+    <span class="notice">And this is a small notice.</span>
+</section>
+
+
+<ul class="comments">
+    <li class="new">
+        <form action="">
+            <header class="details">
+                <input class="input author" type="text"
+                       placeholder="What's your name?">
+                <button class="button publish">Publish</button>
+            </header>
+            <textarea class="textarea"
+                      placeholder="Please, share your thoughts!"></textarea>
+        </form>
+    </li>
+    <li class="comment">
+        <header class="details">
+            <span class="author">Kyle Simpson</span>
+            <span class="publication-date">{{ date "01/01/2018" }}</span>
+        </header>
+        <p>
+            It's awful. (I'm really jealous)
+        </p>
+    </li>
+    <li class="comment">
+        <header class="details">
+            <span class="author">Bill Gates</span>
+            <span class="publication-date">{{ date "01/01/2018" }}</span>
+        </header>
+        <p>
+            Woah! Amazing, how much paper do you want?
+        </p>
+    </li>
+</ul>
+
+{{> footer }}

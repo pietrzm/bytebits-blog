@@ -1,0 +1,21 @@
+@import "../../modules/typography"
+@import "../../modules/color"
+@import "../../modules/font-size"
+@import "../../modules/font-family"
+@import "../../modules/media"
+
+
+
+.article-comments
+  @include typography($font-family--text, $font-size--text)
+  padding: 3% 0
+  background-color: $color--background-alternative
+
+  margin: auto
+  width: 95%
+  @include media($media--tablet)
+    width: 90%
+  @include media($media--desktop)
+    width: 65%
+  @include media($media--widescreen)
+    width: 50%

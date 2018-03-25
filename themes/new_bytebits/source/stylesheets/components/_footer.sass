@@ -1,0 +1,39 @@
+@import "../modules/color"
+@import "../modules/typography"
+@import "../modules/font-size"
+@import "../modules/font-family"
+@import "../modules/media"
+
+
+
+.footer
+  @include typography($font-family--text, $font-size--notice)
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+  padding: 3%
+
+  background-color: $color--background-alternative
+  color: $color--notice
+
+  & > .section
+    display: block
+
+    text-align: center
+
+    margin: 30px 0
+    width: 100%
+
+    @include media($media--tablet)
+      margin: 30px 0
+      width: 100%
+    @include media($media--desktop)
+      margin: 0
+      width: 33.3%
+    @include media($media--widescreen)
+      margin: 0
+      width: 30%
+
+    & > *:first-child
+      margin: 0 auto

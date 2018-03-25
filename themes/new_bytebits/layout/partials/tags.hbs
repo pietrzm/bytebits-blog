@@ -1,0 +1,7 @@
+<ul class="tags">
+    {{# each data as |tag| }}
+        <li class="tag">
+            <a href="/articles/tags/{{kebab tag.name }}">{{ tag.name }}</a>
+        </li>
+    {{/each}}
+</ul>

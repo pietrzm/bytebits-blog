@@ -1,0 +1,22 @@
+@import "../modules/color"
+@import "../modules/typography"
+@import "../modules/font-size"
+@import "../modules/font-family"
+
+
+
+.social-media
+  display: inline-block
+  width: 100%
+
+  > *
+    display: inline-block
+    transition: opacity 100ms ease-in
+    opacity: .5
+    font-size: $font-size--xxx-large
+    padding: 0 7%
+    &:hover
+      opacity: 1
+
+    a
+      color: $color--text

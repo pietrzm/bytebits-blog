@@ -1,0 +1,84 @@
+@import "modules/typography"
+@import "modules/font-family"
+@import "modules/font-size"
+@import "modules/color"
+@import "modules/spacing"
+@import "modules/constants"
+@import "utilities/math"
+
+
+
+html
+  @include typography($font-family--text, $font-size--text)
+  color: $color--text
+
+  box-sizing: border-box
+
+
+body
+  background-color: $color--background
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  overflow-y: scroll
+
+
+*,
+*:before,
+*:after
+  box-sizing: inherit
+
+
+a
+  text-decoration: inherit
+  color: $color--link
+  &:hover
+    color: $color--link-hover
+  &:visited
+    color: $color--link
+  &:active
+    color: $color--link
+
+
+h1, h2, h3
+  margin-bottom: 10px
+
+h1
+  @include typography($font-family--heading, $font-size--xx-large)
+  margin-top: leading($font-size--xx-large)
+  //margin-left: -$font-size--xx-large / 2
+  color: darken($color--primary, pow($typography--ratio, 1) * 1%)
+
+h2
+  @include typography($font-family--heading, $font-size--x-large)
+  margin-top: leading($font-size--x-large)
+  //margin-left: -$font-size--x-large / 2
+  color: darken($color--primary, pow($typography--ratio, 2) * 2%)
+
+h3
+  @include typography($font-family--heading, $font-size--large)
+  margin-top: leading($font-size--large)
+  //margin-left: -$font-size--large / 2
+  color: darken($color--primary, pow($typography--ratio, 3) * 3%)
+
+
+p
+  margin-bottom: leading($font-size--regular) / 2
+
+
+small
+  @include typography($font-family--text, $font-size--notice)
+  color: $color--notice
+
+
+th, td
+  padding: 0 15px
+
+
+ul
+  list-style: circle inside
+  padding-left: 15px
+
+li
+  display: list-item
+

@@ -1,0 +1,29 @@
+@import "../modules/color"
+@import "../modules/font-family"
+@import "../modules/font-size"
+@import "../modules/typography"
+
+
+
+html body
+  pre[class*="language-"]
+    background-color: $color--background-alternative
+    margin: leading($font-size--code) -1%
+    padding: leading($font-size--code) / 2
+
+
+  code[class*="language-"]
+    font-family: $font-family--code
+    font-size: $font-size--code
+    line-height: leading($font-size--code)
+    letter-spacing: .025rem
+
+    margin: 0
+    padding: 0
+
+    color: $color--grey-dark
+    text-shadow: none
+
+
+    .token
+      background-color: transparent

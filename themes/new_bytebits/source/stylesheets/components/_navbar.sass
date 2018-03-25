@@ -1,0 +1,48 @@
+@import "../modules/color"
+@import "../modules/constants"
+@import "../modules/spacing"
+@import "../modules/typography"
+@import "../modules/font-family"
+@import "../modules/font-size"
+
+
+
+.navbar
+  @include typography($font-family--display, $font-size--regular)
+
+  display: flex
+  justify-content: space-between
+
+  margin-bottom: leading($font-size--title)
+  padding: 0 spacer($regular, $spacing--responsive)
+
+  a
+    color: $color--text
+    padding: 15px 0
+    &:hover
+      color: $color--primary
+
+  .navbar-brand
+    @include typography($font-family--display, $font-size--large)
+    transition: background-color 100ms, color 100ms ease-in
+    display: inline-block
+
+    padding: spacer($regular, $spacing--fixed)
+    &:hover
+      opacity: .75
+      color: $color--primary
+
+  .navbar-items
+    display: inline-block
+
+
+    .navbar-item
+      transition: background-color 100ms, color 100ms ease-in
+      display: inline-block
+
+      padding: spacer($regular, $spacing--fixed)
+      &:hover
+        opacity: .75
+
+        background-color: $color--background-alternative
+        color: $color--primary

@@ -1,0 +1,16 @@
+@import "../modules/typography"
+@import "../modules/color"
+@import "../modules/font-size"
+@import "../modules/font-family"
+
+
+
+.hero
+  @include typography($font-family--text, $font-size--text)
+  padding: 3% 5%
+  background-color: $color--primary
+  color: $color--background
+
+  .notice
+    //opacity: .7
+    color: $color--primary-light

@@ -1,0 +1,30 @@
+@mixin development-icon($code)
+  font-family: "Devicon", fantasy
+  &:before
+    content: $code
+
+
+@mixin development
+
+  &.javascript
+    @include development-icon("\e845")
+
+  &.typescript
+    @include development-icon("\e920")
+
+
+  &.nodejs
+    @include development-icon("\eb6a")
+
+  &.express
+    @include development-icon("\e93d")
+
+
+  &.angular
+    @include development-icon("\e61d")
+
+  &.react
+    @include development-icon("\e601")
+
+  &.vue
+    @include development-icon("\e931")

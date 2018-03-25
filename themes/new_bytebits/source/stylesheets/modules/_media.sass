@@ -1,0 +1,8 @@
+$media--tablet: 769px
+$media--desktop: 960px
+$media--widescreen: 1152px
+
+
+@mixin media($device-resolution)
+  @media only screen and (min-width: $device-resolution)
+    @content

@@ -1,0 +1,44 @@
+@import "../../modules/typography"
+@import "../../modules/font-family"
+@import "../../modules/font-size"
+@import "../../modules/color"
+@import "../../modules/spacing"
+@import "../../modules/constants"
+@import "../../modules/media"
+
+
+
+.article
+  @include typography($font-family--text, $font-size--text)
+
+  display: block
+  padding-bottom: 7%
+
+
+  .article-details
+    text-align: center
+
+
+  .article-title
+    @include typography($font-family--display, $font-size--xxx-large)
+    color: $color--primary
+
+
+  .article-content
+    margin: auto
+    width: 95%
+    @include media($media--tablet)
+      width: 90%
+    @include media($media--desktop)
+      width: 70%
+    @include media($media--widescreen)
+      width: 50%
+
+
+  code
+    @include typography($font-family--code, $font-size--code)
+    white-space: nowrap
+    padding: 5px 7px
+
+    color: $color--primary
+    background-color: $color--background-alternative

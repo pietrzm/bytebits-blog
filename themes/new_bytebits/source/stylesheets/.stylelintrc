@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "max-empty-lines": 3,
+    "max-line-length": 300,
+    "max-nesting-depth": 3,
+
+
+    "color-hex-case": "upper",
+    "color-hex-length": "long",
+    "color-named": "always-where-possible",
+    "color-no-hex": true,
+
+    "number-leading-zero": "never",
+    "number-max-precision": 1,
+    "number-no-trailing-zeros": true,
+
+    "length-zero-no-unit": true,
+    "unit-case": "lower",
+
+
+    "no-descending-specificity": true,
+    "no-duplicate-selectors": true,
+    "no-empty-source": true,
+    "no-eol-whitespace": true
+  }
+}
