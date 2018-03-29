@@ -26,8 +26,7 @@
 <ul class="comments">
     <li class="new">
         <form method="POST" action="https://api.staticman.net/v2/entry/TheByteBits/bytebits-blog/master/comments">
-            <input name="options[redirect]" type="hidden" value="http://bytebits.io">
-            <input name="options[slug]" type="hidden" value="{{ page.source }}">
+            <input name="options[page]" type="hidden" value="{{ page.source }}">
             <header class="details">
                 <input class="input author" name="fields[name]" type="text"
                        placeholder="What's your name?">
