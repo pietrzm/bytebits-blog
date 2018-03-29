@@ -4,7 +4,11 @@ const kebab = string =>
         .replace(" ", "-")
 
 
+const split = a => b =>
+    b.split(a)
+
 
 module.exports = {
-    kebab
+    kebab,
+    split
 }

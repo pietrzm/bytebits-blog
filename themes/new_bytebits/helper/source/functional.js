@@ -5,12 +5,12 @@ const curry = fn =>
             : (...args2) => fn(...[ ...args, ...args2 ])
 
 
-const spread = (fn, ...args) =>
+const j = (fn, ...args) =>
     fn(...args)
 
 
 
 module.exports = {
     curry,
-    spread
+    j
 }

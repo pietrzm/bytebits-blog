@@ -10,9 +10,13 @@ const includes = item => list =>
     !!~list.indexOf(item)
 
 
+const last = xs =>
+    xs[xs.length]
+
 
 module.exports = {
     map,
     filter,
-    includes
+    includes,
+    last
 }
