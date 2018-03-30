@@ -1,22 +1,43 @@
-const map = fn => list =>
-    list.map(fn)
+const map = fn => xs =>
+    xs.map(fn)
 
 
-const filter = fn => list =>
-    list.filter(fn)
+const filter = fn => xs =>
+    xs.filter(fn)
 
 
-const includes = item => list =>
-    !!~list.indexOf(item)
+const includes = x => xs =>
+    !!~xs.indexOf(x)
 
 
 const last = xs =>
-    xs[xs.length]
+    xs[xs.length - 1]
+
+
+const isEmpty = xs =>
+    xs.length > 0
+
+
+const reverse = xs =>
+    xs.reverse()
+
+
+const take = n => xs =>
+    xs.slice(0, n)
+
+
+const join = separator => xs =>
+    xs.join(separator)
+
 
 
 module.exports = {
     map,
     filter,
     includes,
-    last
+    last,
+    isEmpty,
+    reverse,
+    take,
+    join
 }

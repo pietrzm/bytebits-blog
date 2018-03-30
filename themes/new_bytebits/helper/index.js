@@ -1,8 +1,8 @@
 const { j } = require('./source/functional')
-const { filter, map, includes, last } = require('./source/list')
+const { filter, map, includes, last, isEmpty } = require('./source/list')
 const { date } = require('./source/time')
-const { kebab } = require('./source/string')
-const { split } = require('./source/string')
+const { kebab, replace } = require('./source/string')
+const { separator, parse, format, basename } = require('./source/path')
 
 const { hasTag } = require('./source/article')
 
@@ -14,8 +14,9 @@ const { hasTag } = require('./source/article')
 
 module.exports = hexo => ({
     j,
-    filter, map, includes, last,
+    filter, map, includes, last, isEmpty,
     date,
-    kebab, split,
-    hasTag
+    kebab, replace,
+    hasTag,
+    separator, parse, format, basename
 })
