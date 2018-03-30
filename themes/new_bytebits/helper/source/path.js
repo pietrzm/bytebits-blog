@@ -18,10 +18,15 @@ const basename = (path, extension) =>
     replace(last(parse(path)))(extension)("")
 
 
+const normalize = path =>
+    format(parse(path))
+
+
 
 module.exports = {
     separator,
     parse,
     format,
-    basename
+    basename,
+    normalize
 }
