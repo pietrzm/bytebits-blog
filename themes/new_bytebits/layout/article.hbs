@@ -19,8 +19,6 @@
 </main>
 
 
-{{ format (parse page.path) }}
-
 {{#> hero 'Title' }}
     <p>This is a section you can present your offer to a reader.</p>
     <span class="notice">And this is a small notice.</span>
@@ -32,32 +30,26 @@
             <input name="options[redirect]" type="hidden" value="http://bytebits.io">
             <input name="options[path]" type="hidden" value="{{ normalize page.path }}">
             <header class="details">
-                <input class="input author" name="fields[name]" type="text"
+                <input class="input author" name="fields[author]" type="text"
                        placeholder="What's your name?">
                 <button class="button publish">Publish</button>
             </header>
-            <textarea class="textarea" name="fields[message]"
+            <textarea class="textarea" name="fields[content]"
                       placeholder="Please, share your thoughts!"></textarea>
         </form>
     </li>
-    <li class="comment">
-        <header class="details">
-            <span class="author">Jeremy Tobias</span>
-            <span class="publication-date">{{ date "01/01/2018" }}</span>
-        </header>
-        <p>
-            It's awful. (I'm really jealous)
-        </p>
-    </li>
-    <li class="comment">
-        <header class="details">
-            <span class="author">Toomz</span>
-            <span class="publication-date">{{ date "01/01/2018" }}</span>
-        </header>
-        <p>
-            Woah! Amazing!
-        </p>
-    </li>
+
+    {{# each (query site.data (and (includes (normalize page.path)) (includes 'comments'))) as |comment| }}
+        <li class="comment">
+            <header class="details">
+                <span class="author">{{ comment.author }}</span>
+                <span class="publication-date">{{ date comment.datetime }}</span>
+            </header>
+            <p>
+                {{{ comment.content }}}
+            </p>
+        </li>
+    {{/ each }}
 </ul>
 
 {{> footer }}

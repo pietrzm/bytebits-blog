@@ -10,8 +10,14 @@ const replace = string => re => value =>
     string.replace(re, value)
 
 
+const search = re => string =>
+    string.search(re)
+
+
+
 module.exports = {
     kebab,
+    search,
     split,
     replace
 }

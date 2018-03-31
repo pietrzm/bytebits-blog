@@ -1,4 +1,4 @@
-const { includes, isEmpty, filter, last, reverse, join } = require('./list');
+const { filter, last, join } = require('./list');
 const { split, replace } = require('./string');
 
 
@@ -7,7 +7,7 @@ const separator = "/"
 
 
 const parse = path =>
-    filter(isEmpty)(split(separator)(path))
+    filter(x => x.length > 0)(split(separator)(path))
 
 
 const format = chunks =>

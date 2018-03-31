@@ -6,7 +6,7 @@
         <ul class="article-list">
 
 
-        {{# each (j (filter (hasTag page.tag)) site.posts.data) as |post| }}
+        {{# each (filter site.posts.data (hasTag page.tag)) as |post| }}
             <li class="article-short">
                 <div class="publication-date">{{ date post.date }}</div>
                 <a href="{{ post.path }}">{{ post.title }}</a>
