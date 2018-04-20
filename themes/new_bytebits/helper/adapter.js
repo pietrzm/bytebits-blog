@@ -44,12 +44,14 @@ const query = (data, query) =>
     mData.query(query)(data)
 
 
-const and =
-    mData.and
+const and = (a, b, c, d, e) =>
+    mData.and(...mList
+        .filter(x => !!x)([ a, b, c, d, e ]))
 
 
-const or =
-    mData.or
+const or = (a, b, c, d, e) =>
+    mData.or(...mList
+        .filter(x => !!x)([ a, b, c, d, e ]))
 
 
 

@@ -40,6 +40,8 @@
         </form>
     </li>
 
+    {{page.path}}
+
     {{# each (query site.data (and (includes (normalize page.path)) (includes 'comments'))) as |comment| }}
         <li class="comment">
             <header class="details">

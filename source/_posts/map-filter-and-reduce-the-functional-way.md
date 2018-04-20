@@ -16,12 +16,20 @@ icon: devicon-javascript-plain
 
 # What's all the fuss about?
 
-Have you ever wished your code was more concise, functions pure and your application being more elegant without need of any [class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)?    
+As you all may know, functional style of programming has gotten really a lot of attention lately. It's happening for several reasons, but the most highlighted one by the community is one of the bigger flaws of OOP design.
 
-Wish no more!  
-Together, we will level up your functional ninjutsu's skills, because its always worth having few more tricks up in your sleeve.  
-    
-In this article we are going to talk about three basic functional tools available natively in any ES5 supporting browser and Node.js as well.  
+> Because the problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them.
+>
+> You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.
+>
+> <cite>Joe Armstrong, creator of Erlang, on software reusability.</cite>
+
+JavaScript happens to support both paradigms (to an extent).
+That's why the community seems to be so divided, there's this search for a golden hammer for everything.
+
+Believe me or not, but every tool is different and not everything have to be a nail.
+In this article we're going to talk about three basic functional tools available natively in ES5.
+Knowing those will get you programming skills to the next level!
 
 
 # Array#map
