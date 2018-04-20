@@ -8,9 +8,25 @@
 .hero
   @include typography($font-family--text, $font-size--text)
   padding: 3% 5%
-  background-color: $color--primary
-  color: $color--background
+  background-color: $color--background-alternative
+  color: $color--text-alternative
 
   .notice
-    //opacity: .7
     color: $color--primary-light
+
+
+
+//Themes
+.hero.primary
+  background-color: $color--primary !important
+  color: $color--background !important
+
+  a
+    color: $color--background-alternative !important
+    &:hover
+      color: $color--primary-light !important
+
+
+.hero.transparent
+    background-color: transparent !important
+    color: $color--text !important

@@ -1,0 +1,11 @@
+@mixin override($tag)
+  #{$tag}
+    @content
+
+
+@mixin link($color)
+  a
+    color: $color
+    @content
+    &:hover
+      color: $color

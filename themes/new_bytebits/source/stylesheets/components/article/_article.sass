@@ -43,3 +43,22 @@
 
     color: $color--primary
     background-color: $color--background-alternative
+
+  blockquote
+    @include typography($font-family--quote, $font-size--small)
+    font-weight: 300
+    padding: leading($font-size--code) / 2
+    margin: leading($font-size--code) / 2 -1%
+
+    color: $color--notice
+    background-color: $color--background-alternative
+    border-left: 3px solid $color--primary
+
+  cite
+    @include typography($font-family--quote, $font-size--quote)
+    font-style: italic
+
+    display: block
+    text-align: right
+    &:before
+      content: '— '
