@@ -5,6 +5,8 @@ const mString = require("./source/string")
 const mTime = require("./source/time")
 const mPath = require("./source/path")
 const mData = require("./source/data")
+const mValue = require("./source/value")
+const mFunctional = require("./source/functional")
 
 
 
@@ -44,14 +46,22 @@ const query = (data, query) =>
     mData.query(query)(data)
 
 
-const and = (a, b, c, d, e) =>
-    mData.and(...mList
-        .filter(x => !!x)([ a, b, c, d, e ]))
+const and = (v, a, r, g, s) => {
+    const { filter, reverse, tail } = mList,
+        { isTruthy } = mValue
+
+    const vargs = xs => reverse(tail(reverse(filter(isTruthy)(xs))))
+    return mData.and.apply(null, vargs([ v, a, r, g, s ]))
+}
 
 
-const or = (a, b, c, d, e) =>
-    mData.or(...mList
-        .filter(x => !!x)([ a, b, c, d, e ]))
+const or = (v, a, r, g, s) => {
+    const { filter, reverse, tail } = mList,
+        { isTruthy } = mValue
+
+    const vargs = xs => reverse(tail(reverse(filter(isTruthy)(xs))))
+    return mData.or.apply(null, vargs([ v, a, r, g, s ]))
+}
 
 
 
