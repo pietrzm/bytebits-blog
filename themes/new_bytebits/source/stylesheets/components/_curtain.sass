@@ -1,3 +1,19 @@
 .curtain
   animation: fade-in 250ms
+  animation-fill-mode: both
   min-height: max-content
+
+  &.fade-in
+    animation-name: fade-in
+
+  &.slow
+    animation-duration: 1s
+
+  &.after-render
+    animation-delay: 250ms
+  &.after-1s
+    animation-delay: 1s
+  &.after-2s
+    animation-delay: 2s
+  &.after-3s
+    animation-delay: 3s

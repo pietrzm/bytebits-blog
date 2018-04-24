@@ -7,6 +7,7 @@
 
 .hero
   @include typography($font-family--text, $font-size--text)
+  position: relative
   padding: 3% 5%
   background-color: $color--background-alternative
   color: $color--text-alternative
@@ -30,3 +31,8 @@
 .hero.transparent
     background-color: transparent !important
     color: $color--text !important
+
+
+// Misc
+.hero.fullscreen
+  min-height: 100vh
