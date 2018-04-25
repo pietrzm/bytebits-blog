@@ -4,15 +4,41 @@
 
 .animation
   animation-fill-mode: both
+  animation-timing-function: ease-out
   animation-duration: .5s
   animation-delay: 0s
 
-
-  &.short
+  &.lasting-0ms
+    animation-duration: 0s
+  &.lasting-250ms
     animation-duration: .25s
-  &.long
+  &.lasting-500ms
+    animation-duration: .5s
+  &.lasting-750ms
+    animation-duration: .75s
+  &.lasting-1000ms
     animation-duration: 1s
+  &.lasting-1250ms
+    animation-duration: 1.25s
+  &.lasting-1500ms
+    animation-duration: 1.5s
+  &.lasting-1750ms
+    animation-duration: 1.75s
+  &.lasting-2000ms
+    animation-duration: 2s
+  &.lasting-2250ms
+    animation-duration: 2.25s
+  &.lasting-2500ms
+    animation-duration: 2.5s
+  &.lasting-2750ms
+    animation-duration: 2.75s
+  &.lasting-3000ms
+    animation-duration: 3s
+  &.short
+    @extend .lasting-250ms
 
+  &.after-0ms
+    animation-delay: 0s
   &.after-250ms
     animation-delay: .25s
   &.after-500ms
@@ -25,8 +51,18 @@
     animation-delay: 1.25s
   &.after-1500ms
     animation-delay: 1.5s
-
-
+  &.after-1750ms
+    animation-delay: 1.75s
+  &.after-2000ms
+    animation-delay: 2s
+  &.after-2250ms
+    animation-delay: 2.25s
+  &.after-2500ms
+    animation-delay: 2.5s
+  &.after-2750ms
+    animation-delay: 2.75s
+  &.after-3000ms
+    animation-delay: 3s
 
   &.fade-in
     animation-name: fade-in

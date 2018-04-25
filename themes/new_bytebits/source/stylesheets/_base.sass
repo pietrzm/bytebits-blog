@@ -17,10 +17,21 @@ html
 
 body
   background-color: $color--background
-  text-rendering: optimizeLegibility
+  text-rendering: auto
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   overflow-y: scroll
+
+  display: flex
+  flex-direction: column
+  height: 100vh
+
+  > nav
+    flex: 1 0 auto
+  > main
+    flex: 1 0 auto
+  > footer
+    flex-shrink: 0
 
 
 *,
