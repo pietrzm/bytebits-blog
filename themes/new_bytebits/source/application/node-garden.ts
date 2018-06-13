@@ -5,16 +5,28 @@ const canvas = document.getElementsByTagName("canvas")[0] as HTMLCanvasElement,
 
 
 
+const scale = (x: number) =>
+    Math.round(x * x * .0025)
+
+
+
 // Define types
 type GardenNode = { x: number, y: number }
 
 // Constants
 const CANVAS_WIDTH = canvas.width = container.offsetWidth,
-    CANVAS_HEIGHT = canvas.height = container.offsetHeight
-const SCREEN_DENSITY = Math.round(CANVAS_WIDTH * CANVAS_HEIGHT * 0.0001)
-const NODES_QUANTITY = SCREEN_DENSITY * 3,
-    MAX_DISTANCE = 100
+    CANVAS_HEIGHT = canvas.height = container.offsetHeight,
+    CANVAS_AREA = CANVAS_WIDTH * CANVAS_HEIGHT,
+    CANVAS_DEPTH = 3,
+    CANVAS_VOLUME = CANVAS_AREA * CANVAS_DEPTH
 
+const UNIVERSE_WIDTH = 100,
+    UNIVERSE_HEIGHT = 100,
+    UNIVERSE_DEPTH = 1,
+    UNIVERSE_VOLUME = UNIVERSE_WIDTH * UNIVERSE_HEIGHT * UNIVERSE_DEPTH
+
+const NODES_QUANTITY = scale(CANVAS_VOLUME / UNIVERSE_VOLUME),
+    MAX_DISTANCE = 50
 
 
 // Define a list of nodes
@@ -25,17 +37,23 @@ const nodes: GardenNode[] =
             y: Math.random() * CANVAS_HEIGHT
         }))
 
-// Represent every node as a dot
-nodes.map(node => {
-    context.beginPath();
-    context.arc(node.x, node.y, 1, 0, Math.PI * 2);
-    context.fill()
-});
 
+const { round, random } = Math
+const depth = round(1 + (CANVAS_DEPTH / UNIVERSE_DEPTH - 1) * random())
 
 const render = () => {
     // Try to connect nodes with a line
     context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
+
+    // Represent every node as a dot
+    nodes.forEach(node => {
+        const size = depth - 1
+        context.beginPath()
+        context.arc(node.x, node.y, size, 0, Math.PI * 2)
+        context.fill()
+    });
+
+
     for (let i = 0; i < nodes.length - 1; i++) {
         const nodeA = nodes[i]
 
@@ -48,11 +66,12 @@ const render = () => {
             const distance = Math.sqrt(dx * dx + dy * dy)
 
             // Connect two near nodes with a line
-            if (distance < MAX_DISTANCE) {
+            if (distance < MAX_DISTANCE * depth) {
                 // Draw a line connecting those two nodes
                 // Line width is based on the distance between those two nodes
                 context.lineWidth = 1 - distance / MAX_DISTANCE
                 context.beginPath();
+
                 context.moveTo(nodeA.x, nodeA.y)
                 context.lineTo(nodeB.x, nodeB.y)
                 context.stroke()
@@ -66,12 +85,12 @@ const render = () => {
 requestAnimationFrame( function frame() {
     render();
 
-    // Animate
-    for (const node of nodes) {
-        node.x = node.x + (0.5 - Math.random()) * 1.15;
-        node.y = node.y + (0.5 - Math.random()) * 1.15;
-    }
-
-
-    requestAnimationFrame(frame);
+    // // Animate
+    // for (const node of nodes) {
+    //     node.x = node.x + (0.5 - Math.random()) * 1.15;
+    //     node.y = node.y + (0.5 - Math.random()) * 1.15;
+    // }
+    //
+    //
+    // requestAnimationFrame(frame);
 } );

@@ -5,6 +5,7 @@
     "outDir": "./bin/",
     "rootDir": "./src/",
     "strict": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "noImplicitAny": true
   }
 }

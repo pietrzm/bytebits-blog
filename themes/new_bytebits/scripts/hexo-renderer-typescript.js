@@ -25,9 +25,9 @@ hexo.extend.renderer.register("ts", "js", data =>
         try {
             const { outputText, sourceMapText } = transpile(data)
             const content = outputText
-                .replace(
-                    JSON.parse(sourceMapText).file + ".map",
-                    toInlineSourcemap(sourceMapText))
+                // .replace(
+                //     JSON.parse(sourceMapText).file + ".map",
+                //     toInlineSourcemap(sourceMapText))
 
             resolve(content)
         } catch (e) {

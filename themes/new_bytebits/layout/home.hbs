@@ -1,20 +1,41 @@
-{{> navbar }}
+{{> navbar theme="primary animation fade-in" }}
+
 
 <main class="animation fade-in">
-    <div class="container">
-        <h1>Home</h1>
-        <p>Call me Ishmael. Some years ago — never mind how long precisely — having little or no money in my purse, and
-            nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of
-            the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find
-            myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find
-            myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and
-            especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to
-            prevent me from deliberately stepping into the street, and methodically knocking people’s hats off — then, I
-            account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a
-            philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing
-            surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very
-            nearly the same feelings towards the ocean with me.</p>
-    </div>
+    <section class="hero primary fullscreen">
+        <canvas class="node-garden | animation fade-in lasting-1000ms after-2250ms"></canvas>
+
+        <div class="align-left | animation fade-in lasting-250ms after-750ms">
+            <span class="title">Web Applications tailored to your needs.</span>
+            <p>What</p>
+        </div>
+        <br>
+        <div class="align-right | animation fade-in lasting-250ms after-1250ms">
+            <span class="title">With user experience in mind.</span>
+            <p>Why</p>
+        </div>
+        <br>
+        <div class="align-left | animation fade-in lasting-250ms after-1750ms">
+            <span class="title">Developed with passion.</span>
+            <p>Who</p>
+        </div>
+    </section>
+
+    <section class="hero">
+        <span class="title">Applications tailored to your needs.</span>
+        <p>Delivering a custom fit software for your business.
+            <br>Providing deep software analysis & consultancy followed by the application development.</p>
+        <p>Don't hesitate, <a href="/contact">contact me directly</a> and get a custom quote on your project.</p>
+    </section>
+
+    <section class="hero transparent">
+        <span class="title">Applications tailored to your needs.</span>
+        <p>Delivering a custom fit software for your business.
+            <br>Providing deep software analysis & consultancy followed by the application development.</p>
+        <p>Don't hesitate, <a href="/contact">contact me directly</a> and get a custom quote on your project.</p>
+    </section>
 </main>
+
+<script type="module" src="/application/node-garden.js"></script>
 
 {{> footer }}
