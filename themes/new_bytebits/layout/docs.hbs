@@ -1,0 +1,28 @@
+{{> navbar }}
+
+
+<main class="animation fade-in">
+    <div class="container content-menu">
+        <div class="menu">
+            <ul>
+                {{# each page.menu as |item| }}
+                    <li>
+                        <a href="#{{ item.value }}">{{ item.value }}</a>
+                        <ul>
+                            {{# each item.children as |item| }}
+                                <li>
+                                    <a href="#{{ item.value }}">{{ item.value }}</a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="content">
+            {{{ page.content }}}
+        </div>
+    </div>
+</main>
+
+{{> footer }}

@@ -1,0 +1,37 @@
+@import "../modules/color"
+@import "../modules/font-size"
+
+
+
+.content-menu
+  display: flex
+  justify-content: center
+
+
+  .content
+    flex-grow: 12
+
+
+  .menu
+    transition: opacity 500ms, color 100ms ease-in
+
+    flex-grow: 1
+    align-self: flex-start
+
+    overflow-y: auto
+    position: sticky
+    top: 10vh
+
+    font-size: $font-size--x-small
+
+    max-height: 80vh
+    margin: 10vh 10%
+
+    opacity: .75
+    &:hover
+      opacity: 1
+
+    a
+      color: $color--text
+      &:hover
+        color: $color--primary
