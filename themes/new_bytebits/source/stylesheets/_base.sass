@@ -56,19 +56,19 @@ h1, h2, h3
 
 h1
   @include typography($font-family--heading, $font-size--xx-large)
-  margin-top: leading($font-size--xx-large)
+  padding-top: leading($font-size--xx-large)
   //margin-left: -$font-size--xx-large / 2
   color: darken($color--primary, pow($typography--ratio, 1) * 1%)
 
 h2
   @include typography($font-family--heading, $font-size--x-large)
-  margin-top: leading($font-size--x-large)
+  padding-top: leading($font-size--x-large)
   //margin-left: -$font-size--x-large / 2
   color: darken($color--primary, pow($typography--ratio, 2) * 2%)
 
 h3
   @include typography($font-family--heading, $font-size--large)
-  margin-top: leading($font-size--large)
+  padding-top: leading($font-size--large)
   //margin-left: -$font-size--large / 2
   color: darken($color--primary, pow($typography--ratio, 3) * 3%)
 
@@ -84,8 +84,11 @@ small
 
 table
   th, td
-    padding: 0 15px
     vertical-align: top
+  th
+    padding: 0
+  td
+    padding: 0 15px
 
 ul
   list-style: circle inside
@@ -93,3 +96,24 @@ ul
   li
     display: list-item
 
+
+hr
+  margin: 75px 0
+  height: 1px
+
+  border: none
+  background-image: -webkit-linear-gradient(left, $color--background-alternative, $color--notice, $color--background-alternative)
+  background-image: -moz-linear-gradient(left, $color--background-alternative, $color--notice, $color--background-alternative)
+  background-image: -ms-linear-gradient(left, $color--background-alternative, $color--notice, $color--background-alternative)
+  background-image: -o-linear-gradient(left, $color--background-alternative, $color--notice, $color--background-alternative)
+
+  opacity: .25
+  & + hr
+    opacity: .75
+
+  & + h1
+    margin-top: 3rem
+  & + h2
+    margin-top: 2rem
+  & + h3
+    margin-top: 1rem

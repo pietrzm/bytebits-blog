@@ -11,3 +11,11 @@
     width: 70%
   @include media($media--widescreen)
     width: 60%
+
+  &.extended
+    @include media($media--tablet)
+      width: 95%
+    @include media($media--desktop)
+      width: 95%
+    @include media($media--widescreen)
+      width: 95%

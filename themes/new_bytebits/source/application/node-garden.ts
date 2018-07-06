@@ -1,4 +1,8 @@
+
 // Get a canvas element to draw on
+import { and } from "./and.js"
+import "../type/index"
+
 const canvas = document.getElementsByTagName("canvas")[0] as HTMLCanvasElement,
     container = canvas.offsetParent as HTMLElement,
     context = canvas.getContext("2d") as CanvasRenderingContext2D
@@ -94,3 +98,14 @@ requestAnimationFrame( function frame() {
     //
     // requestAnimationFrame(frame);
 } );
+
+
+and(1)()
+
+const isNull = (x: number ): x is number =>
+    x == null
+
+isNull(NaN)
+
+
+const nn = (): ArrayLike<Any> => ({})
