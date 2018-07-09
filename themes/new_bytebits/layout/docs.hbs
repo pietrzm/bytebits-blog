@@ -11,7 +11,7 @@
                         <ul>
                             {{# each item.children as |item| }}
                                 <li>
-                                    <a href="#{{ item.value }}">{{ item.value }}</a>
+                                    <a href="#{{ replace item.value (re " / " "g") "-" }}">{{ item.value }}</a>
                                 </li>
                             {{/each}}
                         </ul>

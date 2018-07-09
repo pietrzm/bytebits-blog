@@ -64,6 +64,13 @@ const or = (v, a, r, g, s) => {
 }
 
 
+const replace = (string, re, value) =>
+    string.replace(re, value)
+
+const re = (string, flags) =>
+    new RegExp(string, flags || "")
+
+
 
 module.exports = {
     map, filter,
@@ -75,5 +82,7 @@ module.exports = {
     prop,
     and,
     or,
-    includes
+    includes,
+    replace,
+    re
 }

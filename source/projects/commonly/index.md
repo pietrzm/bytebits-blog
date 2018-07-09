@@ -8,10 +8,9 @@ menu:
         - value: uncurry
         - value: compose
         - value: pipe
-        - value: negate
+        - value: negate / complement
         - value: memoize
         - value: tap
-        - value: once
         - value: throttle
         - value: debounce
 
@@ -20,13 +19,13 @@ menu:
         - value: and
         - value: nand
         - value: or
-        - value: xor
+        - value: xor / eor / exor
         - value: xnor
         - value: not
 
     - value: List
       children:
-        - value: reduce
+        - value: reduce / reduceLeft / foldl
         - value: map
         - value: filter
         - value: every
@@ -108,9 +107,9 @@ menu:
 ## curry
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+curry :: ?
 
-type function = (any: any) => any
+type curry = <T> (f: T) => T | any
 ```
 
 Todo: Provide a description.
@@ -123,9 +122,9 @@ Todo: Provide an example.
 ## uncurry
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+uncurry :: ?
 
-type function = (any: any) => any
+type uncurry = <T> (f: T) => T | any
 ```
 
 Todo: Provide a description.
@@ -138,9 +137,9 @@ Todo: Provide an example.
 ## compose
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+compose :: ?
 
-type function = (any: any) => any
+type compose = (...fs: Function[]) => any
 ```
 
 Todo: Provide a description.
@@ -153,9 +152,9 @@ Todo: Provide an example.
 ## pipe
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+pipe :: ?
 
-type function = (any: any) => any
+type pipe = (...fs: Function[]) => any
 ```
 
 Todo: Provide a description.
@@ -165,12 +164,12 @@ Todo: Provide an example.
 ```
 
 
-## negate
+## negate / complement
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+negate :: f -> f
 
-type function = (any: any) => any
+type negate = <T> (f: T) => boolean
 ```
 
 Todo: Provide a description.
@@ -183,9 +182,9 @@ Todo: Provide an example.
 ## memoize
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+memoize :: ?
 
-type function = (any: any) => any
+type memoize = <T> (f: T) => T
 ```
 
 Todo: Provide a description.
@@ -198,24 +197,10 @@ Todo: Provide an example.
 ## tap
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+tap :: ?
 
-type function = (any: any) => any
-```
-
-Todo: Provide a description.
-
-```typescript
-Todo: Provide an example.
-```
-
-
-## once
-[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
-```typescript
-function :: any -> any
-
-type function = (any: any) => any
+type tap = <T1, T2> (f: T1, x: T2) => T2
+type tap = <T1, T2> (f: T1) => (x: T2) => T2
 ```
 
 Todo: Provide a description.
@@ -228,9 +213,10 @@ Todo: Provide an example.
 ## throttle
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+throttle :: number -> f -> f
 
-type function = (any: any) => any
+type throttle = <T> (ms: number, f: T) => T
+type throttle = <T> (ms: number) => (f: T) => T
 ```
 
 Todo: Provide a description.
@@ -243,9 +229,10 @@ Todo: Provide an example.
 ## debounce
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-function :: any -> any
+debounce :: number -> f -> f
 
-type function = (any: any) => any
+type debounce = <T> (ms: number, f: T) => T
+type debounce = <T> (ms: number) => (f: T) => T
 ```
 
 Todo: Provide a description.
@@ -384,7 +371,7 @@ nor(true, true)                 // false
 ---
 
 
-## xor
+## xor / eor / exor
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
 xor :: a -> b -> a | b
@@ -409,7 +396,7 @@ xor(true, false)                // true
 xor(true, true)                 // false
 ```
 
-Aliases: `eor`, `exor`.
+Aliases: `xor`, ``eor`, `exor`.
 
 
 ---
@@ -471,6 +458,442 @@ not(true)                       // false
 ---
 
 ---
+
+
+# List
+
+# reduce / reduceLeft / foldl
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+reduce :: ?
+
+type reduce = <T> (reducer: (accumulator: T, x: T) => T, xs: T[], initialValue?: T) => T
+type reduce = <T> (reducer: (accumulator: T, x: T) => T) => (xs: T[], initialValue? :T) => T
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+| reducer: (accumulator: T, value: T) => T      |                                               |
+| list: T[]                                     |                                               |
+| initialValue? :T                              |                                               |
+**Returns** &nbsp; [boolean]()
+A boolean
+
+```typescript
+Todo: Provide an example.
+```
+
+Aliases: `reduce`, ``reduceLeft`, `foldl`.
+
+---
+
+
+# map
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+map :: ?
+
+type map = <T1, T2> (mapper: (x: T1) => T2, xs: T1[]) => T2[]
+type map = <T1, T2> (mapper: (x: T1) => T2) => (xs: T1[]) => T2[]
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+| reducer: (accumulator: T, value: T) => T      |                                               |
+| list: T[]                                     |                                               |
+| initialValue? :T                              |                                               |
+**Returns** &nbsp; [boolean]()
+A boolean
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# filter
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+filter :: ?
+
+type filter = <T> (predicate: (x: T) => boolean, xs: T[]) => T[]
+type filter = <T> (predicate: (x: T) => boolean) => (xs: T[]) => T[]
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+| reducer: (accumulator: T, value: T) => T      |                                               |
+| list: T[]                                     |                                               |
+| initialValue? :T                              |                                               |
+**Returns** &nbsp; [boolean]()
+A boolean
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# every
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+every :: ?
+
+type every = <T> (predicate: (x: T) => boolean, xs: T[]) => boolean
+type every = <T> (predicate: (x: T) => boolean) => (xs: T[]) => boolean
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+| reducer: (accumulator: T, value: T) => T      |                                               |
+| list: T[]                                     |                                               |
+| initialValue? :T                              |                                               |
+**Returns** &nbsp; [boolean]()
+A boolean
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# some
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+some :: ?
+
+type some = <T> (predicate: (x: T) => boolean, xs: T[]) => boolean
+type some = <T> (predicate: (x: T) => boolean) => (xs: T[]) => boolean
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+| reducer: (accumulator: T, value: T) => T      |                                               |
+| list: T[]                                     |                                               |
+| initialValue? :T                              |                                               |
+**Returns** &nbsp; [boolean]()
+A boolean
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# find
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+find :: ?
+
+type find = <T> (predicate: (x: T) => boolean, xs: T[]) => T
+type find = <T> (predicate: (x: T) => boolean) => (xs: T[]) => T
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+| reducer: (accumulator: T, value: T) => T      |                                               |
+| list: T[]                                     |                                               |
+| initialValue? :T                              |                                               |
+**Returns** &nbsp; [boolean]()
+A boolean
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# includes
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+includes :: ?
+
+type includes = <T> (x: T, xs: T[]) => boolean
+type includes = <T> (x: T) => (xs: T[]) => boolean
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+| reducer: (accumulator: T, value: T) => T      |                                               |
+| list: T[]                                     |                                               |
+| initialValue? :T                              |                                               |
+**Returns** &nbsp; [boolean]()
+A boolean
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# reverse
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+reverse :: [a] => [a]
+
+type reverse = <T> (xs: T[]) => T[]
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# head
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+head :: [a] => a
+
+type head = <T> (xs: T[]) => T
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# tail
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+tail :: [a] => [a]
+
+type tail = <T> (xs: T[]) => T[]
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# take
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+take :: [a] => [a]
+
+type take = <T> (xs: T[]) => T[]
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# last
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+last :: [a] => a
+
+type last = <T> (xs: T[]) => T
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# nth
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+nth :: [a] => a
+
+type nth = <T> (xs: T[]) => T
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# append
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+append :: [a] => a => [a]
+
+type append = <T> (xs: T[]) => (x: T) => T[]
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# prepend
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+append :: [a] => a => [a]
+
+type append = <T> (xs: T[]) => (x: T) => T[]
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# size
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+size :: [a] => number
+
+type size = <T> (xs: T[]) => number
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+---
+
+
+# isEmpty
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+isEmpty :: [a] => boolean
+
+type isEmpty = <T> (xs: T[]) => boolean
+```
+
+Todo: Provide a description.
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+|                                               |                                               |
+**Returns** &nbsp; [?]()
+A ?
+
+```typescript
+Todo: Provide an example.
+```
+
+
+
+---
+
+---
+
 
 
 # Type
@@ -1649,40 +2072,3 @@ sleep(3000, sleep(1000).then(() => console.log("Promise was cancelled.")))
 
 
 ---
-
-
-## sleep2
-[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
-```typescript
-sleep :: number -> Promise<void>? -> Promise<void>
-
-type sleep = (duration: number, cancellationToken?: Promise) => Promise
-```
-
-Returns a promise which self-resolves after a specified amount of time.
-
-Supports promise-based cancellation token.
-When such token resolves, it leaves a returned promise in pending status forever.
-
-
-Parameters                                          |
- -------------------------------------------------- | --------------------------------------------------
-duration: number                                    | Sleep duration in miliseconds.
-cancellationToken: Promise                          | An optional promise as a cancellation token.
-**Returns** &nbsp; [Promise]()
-A Promise which self-resolves after a given duration of time.
-
-```typescript
-sleep(0)
-    .then(() => console.log("Three!"))
-    .then(sleep(1000))
-    .then(() => console.log("Two!"))
-    .then(sleep(1000))
-    .then(() => console.log("One!"))
-    .then(sleep(1000))
-    .then(() => console.log("Happy new year!"))
-
-sleep(3000, sleep(1000).then(() => console.log("Promise was cancelled.")))
-    .then(() => console.log("I will never log anything."))
-    // -> "Promise was cancelled."
-```
