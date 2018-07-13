@@ -26,6 +26,7 @@ menu:
     - value: List
       children:
         - value: reduce / reduceLeft / foldl
+        - value: reduceRight / foldr
         - value: map
         - value: filter
         - value: every
@@ -490,13 +491,13 @@ Aliases: `reduce`, ``reduceLeft`, `foldl`.
 ---
 
 
-# map
+# reduceRight / foldr
 [*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
 ```typescript
-map :: ?
+reduceRight :: ?
 
-type map = <T1, T2> (mapper: (x: T1) => T2, xs: T1[]) => T2[]
-type map = <T1, T2> (mapper: (x: T1) => T2) => (xs: T1[]) => T2[]
+type reduceRight = <T> (reducer: (accumulator: T, x: T) => T, xs: T[], initialValue?: T) => T
+type reduceRight = <T> (reducer: (accumulator: T, x: T) => T) => (xs: T[], initialValue? :T) => T
 ```
 
 Todo: Provide a description.
@@ -511,6 +512,55 @@ A boolean
 
 ```typescript
 Todo: Provide an example.
+```
+
+Aliases: `reduceRight`, `foldr`.
+
+---
+
+
+# map
+[*`source`*](#) &nbsp; &mdash;  &nbsp; [*`spec`*](#)
+```typescript
+map :: mapper -> [x] -> [mapper x]
+```
+```typescript
+type map = <A, B> (mapper: (x: A) => B, xs: List<A>) => List<B>
+type map = <A, B> (mapper: (x: A) => B) => (xs: List<A>) => List<B>
+```
+
+Iterates over a `List` while invoking a `mapper` function on each of the List's value.
+Returns a
+
+| Parameters                                                                                    |
+| --------------------------------------------- | --------------------------------------------- |
+| mapper: (x: A) => B                           |                                               |
+| xs: List                                      |                                               |
+**Returns** &nbsp; [List]()
+A boolean
+
+```typescript
+
+//= Works with Arrays like any map would.
+map(add(7) , [ 1, 2, 3 ])
+        //-> [ 8, 9, 10 ]
+
+//= But additionally it can map over anything which implements Iterable protocol or is an ArrayLike object.
+Promise.race(map(Promise.fromDOMEvent('click'), document.queryAll('.pokemon-starter')))
+        //-> [ Promise(div.pokemon-starter), Promise(div.pokemon-starter), ... ]
+    .then(ev => console.log(`RED received a ${ ev.innerText }`))
+
+//= It also supports mapping over asynchronous collections.
+map(evolve, fetch('/pokemons'))
+        //-> [ Promise('Ivysaur'), Promise('Charmeleon'), Promise('Wartortle') ]
+    /* Same as
+        fetch('/pokemons')
+            .then(map(evolve))
+     */
+
+//= Or with asynchronous mapper
+map(fetch, [ '/pokemons/Pikachu', '/pokemons/Snorlax' ])
+        //-> [ Promise('Pikachu'), Promise('Snorlax') ]
 ```
 
 
