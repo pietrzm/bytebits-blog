@@ -72,6 +72,18 @@ h3
   //margin-left: -$font-size--large / 2
   color: darken($color--primary, pow($typography--ratio, 3) * 3%)
 
+h4
+  @include typography($font-family--heading, $font-size--regular)
+  padding-top: leading($font-size--large)
+  //margin-left: -$font-size--large / 2
+  color: $color--text
+
+h5
+  @include typography($font-family--heading, $font-size--large)
+  padding-top: leading($font-size--large)
+  //margin-left: -$font-size--large / 2
+  color: $color--text
+
 
 p
   margin-bottom: leading($font-size--regular) / 2
@@ -89,12 +101,16 @@ table
     padding: 0
   td
     padding: 0 15px
+    white-space: nowrap
 
 ul
   list-style: circle inside
   padding-left: 15px
+  &.clean
+    list-style: none
   li
     display: list-item
+
 
 
 hr

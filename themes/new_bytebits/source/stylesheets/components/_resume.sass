@@ -1,0 +1,46 @@
+@import "../modules/typography"
+@import "../modules/font-family"
+@import "../modules/font-size"
+@import "../modules/color"
+@import "../modules/spacing"
+@import "../modules/constants"
+
+
+
+.resume-heading
+  .name
+    @include typography($font-family--display, $font-size--title)
+    color: $color--primary
+    display: block
+
+  .specialization
+    @include typography($font-family--display, $font-size--regular)
+    display: block
+
+  .phone
+  .email
+  .picture
+
+
+.resume-body
+  display: flex
+  flex-direction: row
+
+  .experience
+
+  .education
+
+  .skills
+    table, tbody, tr
+      width: 100%
+
+  .languages
+    .language
+      display: inline-block
+      text-align: center
+
+
+.resume-column
+  min-width: 50%
+
+

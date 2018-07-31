@@ -1,0 +1,49 @@
+@import "../modules/color"
+@import "../utilities/math"
+
+
+
+.progress
+  position: relative
+  background-color: $color--background-alternative
+  height: 5px
+  width: 100%
+
+  .value
+    background-color: $color--notice
+    height: 100%
+
+
+svg.progress-circle
+  $radius: 45
+  $circumference: $radius * 2 * $PI
+
+  width: 100px
+  height: 100px
+
+  margin: 3%
+
+  text.label
+    alignment-baseline: middle
+    text-anchor: middle
+
+  circle.value
+    fill: transparent
+    stroke: $color--notice
+    stroke-width: 1px
+
+    stroke-dasharray: $circumference $circumference
+    stroke-dashoffset: $circumference - 0 * $circumference
+
+    r: 45
+    cx: 50
+    cy: 50
+
+    &.is-one-quarter
+      stroke-dashoffset: $circumference - .25 * $circumference
+    &.is-half
+      stroke-dashoffset: $circumference - .5 * $circumference
+    &.is-three-quarters
+      stroke-dashoffset: $circumference - .75 * $circumference
+    &.is-full
+      stroke-dashoffset: $circumference - 1 * $circumference
