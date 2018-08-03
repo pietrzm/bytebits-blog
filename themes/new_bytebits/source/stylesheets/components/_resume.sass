@@ -8,6 +8,9 @@
 
 
 .resume-heading
+  display: flex
+  flex-direction: row
+
   .name
     @include typography($font-family--display, $font-size--title)
     color: $color--primary
@@ -18,8 +21,13 @@
     display: block
 
   .phone
+    @include typography($font-family--text, $font-size--regular)
+    display: block
+
   .email
-  .picture
+    @include typography($font-family--text, $font-size--regular)
+    display: block
+    
 
 
 .resume-body
