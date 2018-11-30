@@ -7,32 +7,20 @@
 
 
 
-.resume-heading
-  display: flex
-  flex-direction: row
-
-  .name
-    @include typography($font-family--display, $font-size--title)
-    color: $color--primary
-    display: block
-
-  .specialization
-    @include typography($font-family--display, $font-size--regular)
-    display: block
+.resume-details
+  @include typography($font-family--text, $font-size--notice)
+  color: $color--notice
+  margin: spacer($regular, $spacing--responsive)
 
   .phone
-    @include typography($font-family--text, $font-size--regular)
     display: block
 
   .email
-    @include typography($font-family--text, $font-size--regular)
     display: block
     
 
 
 .resume-body
-  display: flex
-  flex-direction: row
 
   .experience
 
@@ -48,8 +36,13 @@
       text-align: center
 
 
-.resume-column
-  min-width: 50%
-  margin: 0 spacer($regular, $spacing--responsive)
+
+.columns
+  display: flex
+  flex-direction: row
+
+  .column
+    min-width: 50%
+    margin: 0 spacer($regular, $spacing--responsive)
 
 

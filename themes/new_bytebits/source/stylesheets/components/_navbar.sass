@@ -28,11 +28,14 @@
     .navbar-item
       transition: background-color 100ms, color 100ms ease-in
       display: inline-block
+      position: relative
       padding: spacer($regular, $spacing--fixed)
       &:hover
         opacity: .75
         background-color: $color--background-alternative
         color: $color--primary
+        & > .navbar-sub-items
+          display: block
 
   a
     color: $color--text
@@ -61,3 +64,18 @@
     color: inherit !important
     &:hover
       color: inherit !important
+
+
+.navbar-sub-items
+  display: none
+  position: absolute
+  left: 25%
+  top: 100%
+  padding: 0
+  margin: 0
+
+  .navbar-sub-item
+    display: block
+    clear: both
+    &:hover > .navbar-sub-items
+      display: block
